@@ -12,7 +12,10 @@ namespace AddressBookLINQ
             AddressBookTable addressBookTable = new AddressBookTable();
 
             // UC3
-            addressBookTable.GetAllContacts();
+           // addressBookTable.GetAllContacts();
+
+            // UC4
+            addressBookTable.EditExistingContact("Ankit", "Mankar", "PhoneNumber", "8888888888");
         }
     }
 }
