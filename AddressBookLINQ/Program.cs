@@ -10,6 +10,9 @@ namespace AddressBookLINQ
 
             // UC 1 Create a new table
             AddressBookTable addressBookTable = new AddressBookTable();
+
+            // UC3
+            addressBookTable.GetAllContacts();
         }
     }
 }
