@@ -21,7 +21,11 @@ namespace AddressBookLINQ
             // addressBookTable.DeleteContact("Vishal", "Singh");
 
             // UC6
-            addressBookTable.RetrieveByCityOrState("Jaunpur", "Uttar Pradesh");
+            //addressBookTable.RetrieveByCityOrState("Jaunpur", "Uttar Pradesh");
+
+
+            // UC7
+            addressBookTable.CountByCityOrState("Varanasi", "Uttar Pradesh");
         }
     }
 }
