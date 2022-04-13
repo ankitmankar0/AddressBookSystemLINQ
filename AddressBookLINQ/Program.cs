@@ -28,7 +28,18 @@ namespace AddressBookLINQ
             //addressBookTable.CountByCityOrState("Varanasi", "Uttar Pradesh");
 
             // UC8
-            addressBookTable.SortedContactsByNameForAgivenCity("Jaunpur");
+            //addressBookTable.SortedContactsByNameForAgivenCity("Jaunpur");
+
+
+            // UC9
+            //addressBookTable.GetAllContacts();
+
+
+            // UC10
+            addressBookTable.GetCountByAddressBookType();
+
+            addressBookTable.RetrieveByUsingBookType("Friend");
+
         }
     }
 }
