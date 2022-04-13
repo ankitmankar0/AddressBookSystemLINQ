@@ -76,5 +76,40 @@ namespace AddressBookLINQ
             }
         }
 
+        /*UC6:- Ability to Retrieve Person belonging to a City or State from the Address Book*/
+
+        public void RetrieveByCityOrState(string city, string state)
+        {
+            var retrieveData = from records in table.AsEnumerable()
+                               where records.Field<string>("City") == city || records.Field<string>("State") == state
+                               select records;
+            //Printing data
+            Console.WriteLine("\nRetrieve contact details by city or state name");
+            foreach (DataRow dr in table.AsEnumerable())
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine("FirstName:- " + dr.Field<string>("firstName"));
+                Console.WriteLine("LastName:- " + dr.Field<string>("lastName"));
+                Console.WriteLine("Address:- " + dr.Field<string>("address"));
+                Console.WriteLine("City:- " + dr.Field<string>("city"));
+                Console.WriteLine("State:- " + dr.Field<string>("state"));
+                Console.WriteLine("Zip:- " + dr.Field<string>("zip"));
+                Console.WriteLine("PhoneNumber:- " + dr.Field<string>("phoneNumber"));
+                Console.WriteLine("Email:- " + dr.Field<string>("eMail"));
+            }
+        }
+
+        /* UC7:- Ability to understand the size of address book by City and State 
+                 - Here size indicates the count
+        */
+        public void CountByCityOrState(string city, string state)
+        {
+            var contact = from c in table.AsEnumerable()
+                          where c.Field<string>("City") == city && c.Field<string>("State") == state
+                          select c;
+
+            Console.WriteLine("Count of contacts in {0}, {1} is {2}", city, state, contact.Count());
+        }
+
     }
 }
